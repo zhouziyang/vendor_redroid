@@ -1,0 +1,26 @@
+cc_library_shared {
+    name: "gralloc.redroid",
+    vendor: true,
+
+    srcs: [
+        "*.cpp",
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libcutils",
+    ],
+
+    header_libs: [
+        "libhardware_headers",
+    ],
+
+    cflags: [
+        "-Wall", "-Werror",
+        "-DLOG_TAG=\"gralloc\"",
+    ],
+
+    overrides: ["gralloc.default"],
+
+    relative_install_path: "hw",
+}
